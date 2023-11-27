@@ -1,0 +1,294 @@
+$color-text: #000;
+$color-catch: #898989;
+$color-bg: #FDF8EB;
+$color-ac: #E40065;
+$font-yu: "Yu Gothic", "Helvetica",
+    "Helvetica Neue",
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Meiryo",
+    sans-serif;
+$font-time: 'Times New Roman',
+    Times,
+    serif;
+
+
+
+@mixin inner($w: (1170/1600)*100%, $mw: 1170px) {
+    width: $w;
+    max-width: $mw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex($a: center, $j: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+
+
+}
+
+@mixin py($y: 70px) {
+    padding-top: $y;
+    padding-bottom: $y;
+}
+
+body {
+    color: $color-text;
+    font-family: "Helvetica", "Helvetica Neue", "Yu Gothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-size: 14px;
+    line-height: (24/14);
+    letter-spacing: (50/1000)em;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+/*header*/
+
+.header {
+    &__inner {
+        @include inner();
+    }
+
+    @include py();
+
+    @include flex();
+}
+
+.gnav {
+    &__list {
+        @include flex();
+        font-weight: bold;
+
+
+    }
+
+    &__item {
+        padding-left: 30px;
+
+    }
+
+    &__link {
+        color: $color-text;
+    }
+
+
+}
+
+/*common*/
+
+
+/*info*/
+.info {
+    &__category {
+        color: $color-catch;
+        font-size: 12px;
+    }
+
+    &__title {
+        font-size: 38px;
+        font-weight: normal;
+
+    }
+
+    &__title::after {
+        content: "";
+        display: block;
+        width: 120px;
+        padding-top: 30px;
+        border-bottom: 1px solid #000;
+        margin-bottom: 60px;
+    }
+
+    &__texts {
+        width: 700/1170*100%;
+    }
+
+
+    &__text {
+        font-family: $font-yu;
+
+    }
+
+
+
+    &__Entext {
+        font-family: $font-time;
+        font-style: italic;
+        padding-top: 40px;
+        padding-bottom: 60px;
+
+    }
+
+
+
+
+}
+
+/*card*/
+
+.card {
+    &__title {
+        font-size: 20px;
+        line-height: 26/20;
+        padding: 30px 0 15px;
+    }
+
+    &__cate {
+        font-size: 12px;
+        color: $color-catch;
+    }
+
+    &__text {
+        padding-top: 40px;
+        font-family: $font-yu;
+    }
+
+}
+
+/*block*/
+.block {
+    &__category {
+        background-color: $color-ac;
+        width: fit-content;
+        border-radius: 10px;
+        color: #fff;
+        padding: 0 13px;
+        font-family: $font-yu;
+        font-size: 12px;
+        margin: 30px 0;
+    }
+
+    &__text {
+        font-family: $font-yu;
+        font-size: 20px;
+
+    }
+
+
+}
+
+
+/*main*/
+
+/*works*/
+
+.works {
+    @include py(100px);
+
+    &__inner {
+        @include inner();
+
+    }
+
+    &__list {
+        @include flex();
+    }
+
+
+}
+
+/*project*/
+
+.project {
+    @include py(100px);
+    background-color: $color-bg;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__list {
+        @include flex();
+    }
+}
+
+/*company*/
+
+.company {
+    margin-top: 200px;
+    margin-bottom: 100px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__info {
+        @include flex(flex-start, space-between);
+
+    }
+
+
+    &__item {
+
+        color: #fff;
+        font-family: $font-yu;
+        padding: 150px 80px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(../images/bg_project01.jpg);
+        margin-bottom: 60px;
+    }
+
+    &__item:last-child {
+        padding: 150px 80px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url(../images/bg_project02.jpg);
+
+    }
+
+
+
+}
+
+
+.information {
+    background-color: $color-bg;
+    padding: 100px 0 125px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__list {
+        @include flex();
+    }
+}
+
+
+/*footer*/
+
+.footer {
+    padding: 78px 0 200px;
+    text-align: right;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__copy {
+        font-size: 12px;
+        color: $color-catch;
+        font-weight: bold;
+        font-family: $font-yu;
+    }
+}
