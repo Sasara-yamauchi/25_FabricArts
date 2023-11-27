@@ -152,6 +152,9 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+.project__item {
+  width: 47.8632478632%;
+}
 
 /*company*/
 .company {

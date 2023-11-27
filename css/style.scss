@@ -219,6 +219,10 @@ a {
     &__list {
         @include flex();
     }
+
+    &__item {
+        width: (560/1170)*100%;
+    }
 }
 
 /*company*/
